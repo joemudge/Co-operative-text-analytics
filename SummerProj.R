@@ -845,8 +845,9 @@ clean_corpus<-function(corpus){
       #cbPalette <- c("green", "blue", "yellow", "red")
     #Create Barplot
       ggplot(SUMMARY.PCTDIFF, aes(principle, pctdiff)) +xlab("Principle")+ylab("% Difference of Word Frequency/1000 from Sectors to Overall Co-op")+
-        geom_bar(aes(fill = Sector),position = "dodge", stat="identity",col="black")+ggtitle("How Differing Sectors Talk about Different Co-operative Principles")+theme(plot.title=element_text(hjust=0.5),panel.border = element_rect(colour = "black", fill=NA, size=1),legend.background = element_rect(color = "black")) #+scale_fill_manual(values=cbPalette)+
-
+        geom_bar(aes(fill = Sector),position = "dodge", stat="identity",col="black")+ggtitle("How Differing Sectors Talk about Different Co-operative Principles")+theme(plot.title=element_text(hjust=0.5),panel.border = element_rect(colour = "black", fill=NA, size=1),legend.background = element_rect(color = "black")+# length slightly shrinks the size of the arrow head; lwd makes the line bolder
+                                                                                                                                                                           arrows(x0=0, y0=0, x1=1, y1=20, col='blue', length=0.1, lwd=3)) #+scale_fill_manual(values=cbPalette)+
+    
       makeFootnote(footnote)
     
 
